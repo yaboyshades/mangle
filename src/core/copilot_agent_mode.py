@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Token optimization constants
 SNIPPET_TOKEN_REDUCTION = 0.8  # 80% token reduction target
 MAX_SNIPPET_SUGGESTIONS = 5
-SNIPPET_CONFIDENCE_THRESHOLD = 0.7
+SNIPPET_CONFIDENCE_THRESHOLD = 0.3
 
 # Python snippet patterns from the extension
 PYTHON_SNIPPET_PATTERNS = {
