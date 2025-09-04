@@ -1,0 +1,22 @@
+[
+  {
+    "key": "ctrl+shift+alt+s",
+    "command": "agentMode.analyzeContext",
+    "when": "editorTextFocus && resourceExtname == '.py'"
+  },
+  {
+    "key": "ctrl+shift+alt+p",
+    "command": "editor.action.showSnippets",
+    "when": "editorTextFocus && resourceExtname == '.py'"
+  },
+  {
+    "key": "ctrl+shift+alt+o",
+    "command": "agentMode.showSnippetOptimization",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "📊 Agent Mode: Show Optimization Stats"
+  }
+]
