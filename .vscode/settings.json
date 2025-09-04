@@ -1,0 +1,22 @@
+{
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
+  "python.analysis.completeFunctionParens": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "python.analysis.autoSearchPaths": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  
+  "copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "python": true
+  },
+  
+  "agentMode.snippetOptimization.enabled": true,
+  "agentMode.snippetOptimization.tokenReductionTarget": 0.8,
+  "agentMode.snippetOptimization.maxSuggestions": 5,
+  "agentMode.snippetOptimization.confidenceThreshold": 0.7
+}

@@ -1,0 +1,93 @@
+{
+  "name": "agent-mode-snippet-optimization",
+  "displayName": "Agent Mode Snippet Optimization",
+  "description": "AI-powered snippet optimization for token efficiency in Agent Mode",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "copilot",
+    "agent",
+    "snippets",
+    "optimization",
+    "token-efficiency",
+    "python"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentMode.showSnippetOptimization",
+        "title": "Show Snippet Optimization Info",
+        "category": "Agent Mode"
+      },
+      {
+        "command": "agentMode.analyzeContext",
+        "title": "Analyze Context for Snippets",
+        "category": "Agent Mode"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "agentMode.analyzeContext",
+        "key": "ctrl+shift+alt+s",
+        "when": "editorTextFocus && resourceExtname == '.py'"
+      }
+    ],
+    "configuration": {
+      "title": "Agent Mode Snippet Optimization",
+      "properties": {
+        "agentMode.snippetOptimization.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable snippet optimization in Agent Mode"
+        },
+        "agentMode.snippetOptimization.tokenReductionTarget": {
+          "type": "number",
+          "default": 0.8,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Target token reduction ratio (0.8 = 80% reduction)"
+        },
+        "agentMode.snippetOptimization.maxSuggestions": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 20,
+          "description": "Maximum number of snippet suggestions to show"
+        },
+        "agentMode.snippetOptimization.confidenceThreshold": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0.1,
+          "maximum": 1.0,
+          "description": "Minimum confidence threshold for snippet suggestions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaboyshades/mangle.git"
+  },
+  "license": "MIT"
+}
