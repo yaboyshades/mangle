@@ -1,0 +1,26 @@
+{
+  "$schema": "./copilot.schema.json",
+  "mcpServers": {
+    "mangle-agent": {
+      "command": "python",
+      "args": ["-m", "src.core.copilot_agent_mode"],
+      "env": {
+        "MANGLE_ROOT": "${workspaceFolder}",
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    },
+    "snippet-optimizer": {
+      "command": "node",
+      "args": ["${workspaceFolder}/extensions/deep-research/out/extension.js"],
+      "env": {
+        "NODE_ENV": "production",
+        "VSCODE_EXTENSION_MODE": "true"
+      }
+    }
+  },
+  "expected": {
+    "tokenReduction": 0.8,
+    "maxSuggestions": 5,
+    "confidenceThreshold": 0.7
+  }
+}

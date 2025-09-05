@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Copilot MCP Configuration",
+  "description": "Configuration schema for Copilot Model Context Protocol servers",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "mcpServers": {
+      "type": "object",
+      "description": "MCP server configurations",
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "Command to start the MCP server"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Arguments for the MCP server command"
+            },
+            "env": {
+              "type": "object",
+              "description": "Environment variables for the MCP server",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["command"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "expected": {
+      "type": "object",
+      "description": "Expected optimization metrics and configuration",
+      "properties": {
+        "tokenReduction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Expected token reduction ratio"
+        },
+        "maxSuggestions": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Maximum number of suggestions to return"
+        },
+        "confidenceThreshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Minimum confidence threshold for suggestions"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["mcpServers"],
+  "additionalProperties": false
+}
