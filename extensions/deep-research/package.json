@@ -71,6 +71,55 @@
           "minimum": 0.1,
           "maximum": 1.0,
           "description": "Minimum confidence threshold for snippet suggestions"
+        },
+        "copilot.mcp.configFile": {
+          "type": "string",
+          "default": "${workspaceFolder}/.vscode/copilot.json",
+          "description": "Path to MCP server configuration file"
+        },
+        "copilot.mcp.mcpServers": {
+          "type": "object",
+          "description": "MCP server configurations",
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "Command to start the MCP server"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Arguments for the MCP server command"
+            },
+            "env": {
+              "type": "object",
+              "description": "Environment variables for the MCP server",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "copilot.mcp.expected": {
+          "type": "object",
+          "description": "Expected optimization metrics",
+          "properties": {
+            "tokenReduction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "maxSuggestions": {
+              "type": "number",
+              "minimum": 1
+            },
+            "confidenceThreshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
         }
       }
     }
